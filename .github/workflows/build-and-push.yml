@@ -6,7 +6,8 @@ on:
 
 jobs:
   build-and-push-image:
-    runs-on: ubuntu-latest
+    # Use a specific, compatible OS version
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,13 +23,12 @@ jobs:
         with:
           context: ./app
           push: true
-          # We now tag the image with the unique Git commit SHA
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/hello-app:${{ github.sha }}
 
   deploy-to-kubernetes:
-    # This job will only run if the build-and-push-image job succeeds
     needs: build-and-push-image
-    runs-on: ubuntu-latest
+    # Use the same specific, compatible OS version
+    runs-on: ubuntu-22.04
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
