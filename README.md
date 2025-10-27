@@ -6,7 +6,7 @@ This repository represents a holistic understanding of modern DevOps practices, 
 
 ---
 
-## Key Achievements & Resume Points
+## Key Achievements
 
 * **Automated a CI/CD pipeline with GitHub Actions and Helm** for a containerized Python application, enabling zero-downtime, rolling deployments to a Kubernetes test environment on every commit.
 * **Architected and provisioned a production-grade AWS environment** using Terraform, creating reusable modules for a VPC, EKS cluster, and IAM roles, fully codifying the infrastructure for rapid and repeatable deployments.
